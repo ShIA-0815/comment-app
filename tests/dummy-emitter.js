@@ -17,9 +17,10 @@ setInterval(() => {
         id: Date.now(),
         author: randomUser,
         avatar: 'https://api.dicebear.com/7.x/bottts/svg?seed=' + randomUser,
-        content: randomMsd,
-        timestamp: new Date().toLocaleRime([], { hour: '2-digit', minute: '2-digit' })
+        content: randomMsg,
+        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     };
 
     io.emit('chatMessage', chatData);
+    console.log(`[送信] ${randomUser}: ${randomMsg}`);
 }, 3000);

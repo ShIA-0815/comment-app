@@ -3,6 +3,8 @@ const container = document.getElementById('chat-container');
 const MAX_MESSAGES = 15;
 
 socket.on('chatMessage', (data) => {
+    console.log('received message: ', data);
+
     const msgElement = document.createElement('div');
     msgElement.className = 'message-card';
     msgElement.innerHTML = `
